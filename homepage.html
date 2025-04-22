@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Homepage</title>
+        <link rel="stylesheet" href="mystyle.css">
+        <style>     
+            header {
+                height: 45vh; width: 100%;
+                display: block; 
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-image:url('./public/images/nztravel.jpeg');
+                background-size: contain;
+                background-position: 25% 9%;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body> 
+        <nav  style="background-color: lightseagreen; width: 100%;">
+            <ul width="100%">
+                <li>Logo</li>
+                <li>Home</li>
+                <li >About</li>
+                <li >Contact</li>
+                <li style="width: 100%;text-align: right;">Login/Register</li>
+            </ul>
+        </nav>
+        
+        <header >
+            <h1>Welcome to Travel New Zealand Blog</h1>
+            <p>FInd information about venues and activities in New Zealnd</p>
+            <div> 
+                <p> Some information about my webiste, some marketting sentences</p>
+            </div>
+        </header>
+        <section style="
+        border: 5px; 
+        margin-top: 45px; 
+        margin-bottom: 45px; 
+        display: grid; 
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 10px;
+         padding: 10px; 
+         justify-items: start;
+        ">
+            <div class="box">Auckland</div>
+            <div class="box">Wellington</div>
+            <div class="box">Hamilton</div>
+            <div class="box">Christchurch</div>
+            <div class="box">Nelson</div>
+            <div class="box">Whangarei</div>
+            <div class="box">Tauranga</div>
+            <div class="box">Queenstown</div>
+        </section>
+        <footer style="background-color: lightcoral; padding: 0px;">
+            <p style="padding: 0%;">&copy; 2023 Travel New Zealand Blog. All rights reserved.</p>
+            <p style="font-weight: bold;">Contact us:</p>
+            <div style="display: flex; gap: 10px; justify-content: space-between; padding: 0px 5px 0px 5px;">
+                <p>Email: <a href="mailto:a@a.com">a@a.com</a> </p>
+                <p>Phone: 123-456-7890</p>
+                <p>Follow us on social media: 
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a> | 
+                    <a href="https://www.twitter.com" target="_blank">Twitter</a> | 
+                    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                </p>
+            </div>
+           
+        </footer>
+    </body>
+
+</html>

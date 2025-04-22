@@ -2,14 +2,121 @@
 <html>
     <head>
         <title>Html</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body {
+                background-color: lightblue;
+            }
+            header {
+                background-color: lightcoral;
+            }
+            footer {
+                background-color: lightgreen;
+            }
+            section {
+                background-color: lightyellow;
+            }   
+            ul {
+                list-style-type: none;
+                padding: 0;
+                align-items: center;
+                display: flex;
+            }
+            li {
+                background-color: lightpink;
+                padding: 10px 16px; display: block;
+            }
+            .left-nav ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+        }
+        .left-nav li a {
+            display: block; /* Make the whole area clickable */
+            padding: 0.75rem 1.5rem; /* y-padding, x-padding */
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+        }
+            .box {
+                background-color: lightgray;
+                border: 1px solid black;
+                padding: 20px;
+                text-align: center;
+            }
+            .box1{
+                background-color: lightblue;
+            }
+            .box2{
+                background-color: lightgreen;
+            }
+            .box3{
+                background-color: lightcoral;
+            }
+            .box4{
+                background-color: lightpink;
+            }
+            .box5{
+                background-color: lightyellow;
+            }
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                border: 3px solid black;
+                padding: 10px;
+                justify-items: start;
+            }
+            .grid-container > div {
+                background-color: lightgray;
+                border: 1px solid black;
+                padding: 20px;
+                text-align: center;
+            }
+            .grid-container > div:nth-child(odd) {
+                background-color: lightblue;
+            }
+            .grid-container > div:nth-child(even) {
+                background-color: lightgreen;
+            }
+            .box4 {
+            justify-self: start; /* Override justify-items for this specific box */
+                align-self: end; /* Override align-items for this specific box */
+            }
+            
+            </style
     </head>
     <body>
-        <header> this is a header</header>
-        <section> it's a 
+        <header> 
+            <nav style="background-color: lightcoral;">
+                <ul>
+                    <li>Home</li>
+                    <li >About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+            <nav class="left-nav" style="position: fixed; left: 0; top: 0; height: 100vh; background-color: #f8f9fa; padding: 20px;">
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 20px;">
+                    <li>Home</li>
+                    <li >About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </header>
+        <section style="margin-left: 200px;"> it's a 
             <div>
-                <h1>This is just a random text</h1>
+                <h1>This is just a ranom text</h1>
+                </div>
+                <div class="grid-container">
+                <div class="box box1">Box 1</div>
+                <div class="box box2">Box 2</div>
+                <div class="box box3">Box 3</div>
+                <div class="box box4">Box 4</div>
+                <div class="box box5">Box 5</div>
                 </div>
         </section>
+        <div style="color: blue; font-size: 30px;"> Blues </div>
+
+
         <footer>There is a footer
             <h2> This is small heading</h2>
         </footer>

@@ -1,0 +1,81 @@
+/* Basic styling for visualization */
+.grid-container {
+  border: 3px solid navy;
+  padding: 10px;
+  min-height: 300px; /* Make container taller to see alignment */
+  background-color: lightblue;
+
+  /* --- THIS IS THE KEY --- */
+  display: grid;
+  /* Define columns: e.g., 3 columns of equal fractional width */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* Define row height (optional, rows can size to content) */
+  /* grid-template-rows: 100px 100px; */
+  gap: 10px; /* Space between grid cells (rows and columns) */
+  /* --- /THIS IS THE KEY --- */
+}
+
+.box {
+  border: 1px solid darkgreen;
+  background-color: lightgreen;
+  padding: 20px;
+  /* No margin needed here, use 'gap' on the container */
+  text-align: center;
+}
+
+/* --- Now, let's align the child boxes within their grid cells! --- */
+
+/* === Aligning ALL items within their cells === */
+/* Use these on .grid-container */
+
+/* Horizontal alignment within cells */
+/* .grid-container {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;
+  justify-items: start; /* Default: Align to the start (left) of the cell */
+/* } */
+/* .grid-container {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;
+  justify-items: end; /* Align to the end (right) of the cell */
+/* } */
+ .grid-container {
+   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;
+   justify-items: center; /* Align to the center of the cell */
+ }
+/* .grid-container {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;
+  justify-items: stretch; /* Items stretch to fill the cell width */
+/* } */
+
+/* Vertical alignment within cells */
+/* .grid-container {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; justify-items: center;
+  align-items: start; /* Align to the start (top) of the cell */
+/* } */
+/* .grid-container {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; justify-items: center;
+  align-items: end; /* Align to the end (bottom) of the cell */
+/* } */
+ .grid-container {
+   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; justify-items: center;
+   align-items: center; /* Align to the center of the cell */
+ }
+/* .grid-container {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; justify-items: center;
+  align-items: stretch; /* Default: Items stretch to fill the cell height */
+/* } */
+
+/* You can also align individual items using justify-self and align-self on the item itself */
+.box4 {
+  /* justify-self: start; /* Override justify-items for this specific box */
+  /* align-self: end; /* Override align-items for this specific box */
+}
+
+/* === Aligning the ENTIRE GRID within the container (if grid is smaller than container) === */
+/* Use justify-content and align-content on .grid-container */
+/* .grid-container {
+  display: grid;
+  grid-template-columns: 100px 100px; /* Make grid smaller than container */
+  /* height: 400px; /* Ensure container is tall enough */
+  /* justify-content: center; /* Center the whole grid horizontally */
+  /* align-content: center; /* Center the whole grid vertically */
+/* } */
