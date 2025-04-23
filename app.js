@@ -1,31 +1,38 @@
-console.log("Application is starting");
+const express = require('express');
+const path = require('path');
+const app = express();
 
-const express = require('express')
-const ejs = require('ejs')
-const app = express()
-const port = 3000
-app.set('view engine','ejs'); 
-app.use(express.static('public')) // to serve static files
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
+// Set view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
+// Import routes
+const homeRoutes = require('./routes/home');
+const authRoutes = require('./routes/auth');
 
-app.get("/", (req, res, next) => {
-    console.log("I received a get request on the path // ")
-    let html = ejs.render("homepage.ejs");
-    res.render(html)
-})
+// Use routes
+app.use('/', homeRoutes);
+app.use('/', authRoutes);
 
-app.get("/welcome", (req, res, next) => {
-  console.log("I received a get request on the path // ")
-  res.send("<h1 style='color:blue;'>Welcome</h1>")
-})
+// Error handling middleware
+app.use((req, res, next) => {
+    // res.status(404).render('404', { error: 'Page not found' });
+    res.render('home');
 
+});
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).render('error', { error: 'Something broke!' });
+});
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
